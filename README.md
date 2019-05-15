@@ -46,9 +46,9 @@ However in our (pretty big) music app we encountered some advanced cases and we 
 As I already mention we are responsible for maintaining one of the biggest music app in Poland. It allows you to record video, add audio filters, browse through thousands of videos, listen to songs etc. 
 We had some special requirements like:
 
- - don't let screen lock on specified **Views**
- - don't let screen lock when user is recording or listening to songs
- - and at last but not least - don't let screen lock when user's recording is being proceeded in background (user can be on any **View**)
+ - don't let the screen lock on specified **Views**
+ - don't let the screen lock when user is recording or listening to songs
+ - and at last but not least - don't let the screen lock when user's recording is being proceeded in background (user can be on any **View**)
  - in every other scenario we have to let the system do what it want with screen
 
 We have to handle case in which many independent modules will try to enable and disable **idleTimer**.
