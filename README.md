@@ -42,7 +42,7 @@ You can send as many requests as you need and screen will be "ready to turn off"
 ---
 ### Use Cases
 
-Don't let screen go sleep on this **ViewController**:
+Don't let the screen go sleep on this **ViewController**:
 ```swift
 func viewDidAppear() {
   manager.requestToDisableSleep(withKey: "PlayerView")
