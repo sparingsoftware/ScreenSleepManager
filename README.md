@@ -2,6 +2,32 @@
 
 Small library for managing screen sleep in your app.
 
+Don't let the screen go sleep on this **ViewController**:
+```swift
+func viewDidAppear() {
+  manager.requestToDisableSleep(withKey: "PlayerView")
+}
+
+func viewDidDisappear() {
+  manager.removeRequest(forKey: "PlayerView")
+}
+```
+or  - don't let it sleep when something is being proceeded:
+```swift
+class AudioProcessor {
+  func startProcessing() {
+    // ... 
+    manager.requestToDisableSleep(withKey: "AudioProcessor")
+  }
+
+  // callback
+  func processingFinished() {
+    manager.removeRequest(forKey: "AudioProcessor")
+  }
+}
+```
+
+### Simple case
 Let's say you don't want the screen to "go sleep" in particular **ViewController**. You will need to use `isIdleTimerDisabled` and set it to `true`. When user leaves this screen you will have to set it back to `false` - otherwise your app will never let your screen to turn off. 
 
 In simple cases that's OK. Easy to set, easy to remember.
@@ -38,34 +64,6 @@ protocol IScreenSleepManager {
 
 You can send as many requests as you need and screen will be "ready to turn off" only when **there are no more requests on stack**. It's kind of a counter but with keys so you can control it better.
 
-
----
-### Use Cases
-
-Don't let the screen go sleep on this **ViewController**:
-```swift
-func viewDidAppear() {
-  manager.requestToDisableSleep(withKey: "PlayerView")
-}
-
-func viewDidDisappear() {
-  manager.removeRequest(forKey: "PlayerView")
-}
-```
-or  - don't let it sleep when something is being proceeded:
-```swift
-class AudioProcessor {
-  func startProcessing() {
-    // ... 
-    manager.requestToDisableSleep(withKey: "AudioProcessor")
-  }
-
-  // callback
-  func processingFinished() {
-    manager.removeRequest(forKey: "AudioProcessor")
-  }
-}
-```
 
 ---
 ### Tests
