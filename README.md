@@ -49,7 +49,7 @@ We had some special requirements like:
  - don't let the screen lock on specified **Views**
  - don't let the screen lock when user is recording or listening to songs
  - and at last but not least - don't let the screen lock when user's recording is being proceeded in background (user can be on any **View**)
- - in every other scenario we have to let the system do what it want with screen
+ - in every other scenario we have to let the system do what it want with the screen
 
 We have to handle case in which many independent modules will try to enable and disable **idleTimer**.
 
