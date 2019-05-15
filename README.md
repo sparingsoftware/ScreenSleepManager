@@ -2,7 +2,7 @@
 
 Small library for managing screen sleep in your app.
 
-Let's say you don't want screen to "go sleep" in particular **ViewControllers**. You will need to use `isIdleTimerDisabled` and set it to `true`. When user leaves this screen you will have to set it back to `false` - otherwise your app will never let your screen to turn off. 
+Let's say you don't want screen to "go sleep" in particular **ViewController**. You will need to use `isIdleTimerDisabled` and set it to `true`. When user leaves this screen you will have to set it back to `false` - otherwise your app will never let your screen to turn off. 
 
 In simple cases that's OK. Easy to set, easy to remember.
 
