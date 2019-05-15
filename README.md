@@ -9,7 +9,7 @@ In simple cases that's OK. Easy to set, easy to remember.
 ---
 ### Not simple case
 If you have multiple **ViewsControllers** in your app and on some of them you want to disable "screen lock" but on others don't.
-You can somehow manage it with `isIdleTimerDisabled` but it would be really easy to make a mistake (`true` instead of `false` etc.) or just forget about enabling/disabling.
+You can somehow manage it with `isIdleTimerDisabled` but it would be really easy to make a mistake (`true` instead of `false` etc.) or just forget about enabling/disabling. Also when user leaves a **ViewController** and it will call `isIdleTimerDisabled = false` - it might be wrong because there may be other module that doesn't want screen to go sleep.
 
 I found a really simple and nice library called [Insomnia](https://github.com/ochococo/Insomnia) for such scenario.
 However in our (pretty big) music app we encountered some advanced cases and we wanted more suitable solution for this. Also - as we are usually doing **TDD** - we needed something easy and modularized for testing.
