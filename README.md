@@ -76,7 +76,7 @@ audioProcessor.startProcessign()
 router.navigate(to: .Login)
 presenter.clickSmth()
 
-XCTAssertrt(ScreenSleepManager.instance.isDisabled == false)
+XCTAssert(ScreenSleepManager.instance.isDisabled == false)
 ```
 
 You can also inject ScreenSleepManager object to your **View/Presenter/ViewModel** and test your calls:
