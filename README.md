@@ -5,6 +5,8 @@ Small library for managing screen sleep in your app.
 ### Usage
 Don't let the screen go sleep on this **ViewController**:
 ```swift
+let manager = ScreenSleepManager.instance
+// ...
 func viewDidAppear() {
   manager.requestToDisableSleep(withKey: "PlayerView")
 }
